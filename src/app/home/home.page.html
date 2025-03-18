@@ -1,20 +1,135 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      Exercício 1
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+<!-- alert - que, no caso, mostra a mensagem final ao usuário -->
+  <ion-alert
+  trigger="converter"
+  header="Moeda convertida:"
+  message={{mensagem}}
+  [buttons]="alertButtons"
+></ion-alert>
+
+<!-- meu input - onde o usuário digita o valor a ser convertido -->
+<ion-item>
+  <ion-input [(ngModel)]="valor" type="number" placeholder="Digite o valor em R$ para ser convertido em EUR ou USD:"></ion-input>
+</ion-item>
+
+<!-- alternativas (radio) -->
+<ion-radio-group value="usd"[(ngModel)]="moeda">
+  <ion-item>
+  <ion-label>Converter em Dólar</ion-label>
+  <ion-radio value="usd" slot="start"></ion-radio>
+  </ion-item>
+
+  <ion-item>
+  <ion-label>Converter em Euro</ion-label>
+  <ion-radio value="eur" slot="start"></ion-radio>
+  </ion-item>
+</ion-radio-group>
+
+<!-- botão para chamar a função -->
+<ion-button expand="block" id="converter" (click)="converterMoeda()">Converter moeda</ion-button>
+
+<!--
+                                                EXERCÍCIO 2
+-->
+
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Exercício 2
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+ <!-- alert - que, no caso, mostra a mensagem final ao usuário -->
+ <ion-alert
+    trigger="alert-IMC"
+    header="Classificação IMC"
+    message={{class}}
+    [buttons]="alertButtons">
+  </ion-alert>
+
+<!-- meu input - onde o usuário digita o valor a ser convertido -->
+<ion-item>
+  <ion-input
+  label="Peso:"
+  placeholder="Digite seu peso (em kg)"
+  type="number"
+  [(ngModel)]="peso">
+  </ion-input>
+</ion-item>
+
+<ion-item>
+  <ion-input
+  label="Altura:"
+  placeholder="Digite sua altura (em metros)"
+  type="number"
+  [(ngModel)]="altura">
+</ion-input>
+</ion-item>
+
+
+<!-- botão para chamar a função -->
+<ion-button
+expand="block"
+(click)="calcularIMC()"
+id="alert-IMC">
+<ion-icon slot="start"></ion-icon>
+Calcular IMC
+</ion-button>
+
+<!--
+                                                EXERCÍCIO 3
+-->
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Exercício 3
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<!-- alert - que, no caso, mostra a mensagem final ao usuário -->
+ <ion-alert
+ trigger="alert-fuel"
+ header="Consumo de combustível:"
+ message={{msgCombustivel}}
+ [buttons]="alertButtons"
+></ion-alert>
+
+<!-- meu input - onde o usuário digita o valor a ser convertido -->
+<ion-item>
+ <ion-input [(ngModel)]="distancia" type="number" placeholder="Digite a distância da viagem em km"></ion-input>
+</ion-item>
+
+<!-- alternativas (radio) -->
+<ion-radio-group value="gas"[(ngModel)]="fuel">
+ <ion-item>
+ <ion-label>Gasolina (12 km/L)</ion-label>
+ <ion-radio value="gas" slot="start"></ion-radio>
+ </ion-item>
+
+ <ion-item>
+ <ion-label>Álcool (8 km/L)</ion-label>
+ <ion-radio value="al" slot="start"></ion-radio>
+ </ion-item>
+
+
+ <ion-item>
+ <ion-label>Diesel (10 km/L)</ion-label>
+ <ion-radio value="dis" slot="start"></ion-radio>
+ </ion-item>
+</ion-radio-group>
+
+<!-- botão para chamar a função -->
+<ion-button expand="block" id="alert-fuel" (click)="calcularConsumo()">Calcular consumo</ion-button>
+
 </ion-content>
