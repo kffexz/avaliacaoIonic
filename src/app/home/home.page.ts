@@ -68,22 +68,18 @@ export class HomePage {
   distancia = 0;
   msgCombustivel = '';
   consumo = 0;
-  autonomia = 0;
 
   calcularConsumo(){
     if(this.fuel == 'gas'){
-      this.autonomia = 1/12;
-      this.consumo = this.distancia * this.autonomia;
+      this.consumo = this.distancia/12;
       this.msgCombustivel = 'Serão necessários ' + this.consumo + 'L para esta viagem';
     }
     else if(this.fuel == 'al'){
-      this.autonomia = 1/8;
-      this.consumo = this.distancia * this.autonomia;
+      this.consumo = this.distancia/8;
       this.msgCombustivel = 'Serão necessários ' + this.consumo + 'L para esta viagem';
     }
     else if(this.fuel == 'dis'){
-      this.autonomia = 1/10;
-      this.consumo = this.distancia * this.autonomia;
+      this.consumo = this.distancia/10;
       this.msgCombustivel = 'Serão necessários ' + this.consumo + 'L para esta viagem';
     }
 
