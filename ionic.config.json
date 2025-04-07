@@ -1,0 +1,7 @@
+{
+  "name": "ionicAvaliativa2",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
