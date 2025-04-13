@@ -18,7 +18,7 @@ export class HomePage {
   prestacao = 0;
   totalEmprestimo = 0;
   jurosAnual = 0;
-  anos =0;
+  anos = 0;
   mensagemEx1 = "";
   onIonChange(ev:RangeCustomEvent) {
     this.valorRange = parseInt(ev.detail.value.toString());
