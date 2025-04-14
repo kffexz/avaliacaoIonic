@@ -69,4 +69,126 @@
 
   <!-- EXERCÍCIO 2 -->
 
+  
+  <ion-toolbar>
+    <ion-title>
+      Exercício 2
+    </ion-title>
+  </ion-toolbar>
+
+  <ion-item>
+    <ion-input 
+    placeholder="Insira o valor em R$"
+    [(ngModel)]="valorProduto">
+    <ion-label>Valor do produto:</ion-label>
+    </ion-input>
+  </ion-item>
+
+    <!-- Range desconto -->
+  <ion-item>  
+    <ion-label>Desconto desejado:</ion-label>
+    <ion-range (ionChange)="onIonChange($event)"
+      [(ngModel)]="desconto"
+      [min]="0"
+      [max]="100"
+      id="calcularDesconto"
+      (click)="clDesconto()">
+    </ion-range>
+    <ion-label>{{desconto}}%</ion-label>
+  </ion-item>
+
+  <ion-alert
+  trigger="calcularDesconto"
+  header="Confirmar preço:"
+  message={{mensagem}}
+  [buttons]="alertButtons"
+  class="custom-alert-message">
+</ion-alert>
+
+  <!-- EXERCÍCIO 3 -->
+
+  
+  <ion-toolbar>
+    <ion-title>
+      Exercício 3
+    </ion-title>
+  </ion-toolbar>
+
+  <ion-item>
+    <ion-input 
+    type="number"
+    placeholder="Insira a quantidade de dias que deseja ficar"
+    [(ngModel)]="diaria">
+    <ion-label>Diárias desejadas:</ion-label>
+    </ion-input>
+  </ion-item>
+
+  <!-- quartos -->
+
+  <ion-item>
+    <ion-label>Selecione o quarto: </ion-label>
+  </ion-item>
+
+  <ion-radio-group aria-required="true" value="eco"[(ngModel)]="quarto">
+    <ion-item>
+    <ion-label>Econômico: R$ 150,00</ion-label>
+    <ion-radio value="eco" slot="start"></ion-radio>
+    </ion-item>
+   
+    <ion-item>
+    <ion-label>Padrão: R$ 250,00</ion-label>
+    <ion-radio value="padrao" slot="start"></ion-radio>
+    </ion-item>
+   
+    <ion-item>
+    <ion-label>Luxo: R$ 400,00</ion-label>
+    <ion-radio value="luxo" slot="start"></ion-radio>
+    </ion-item>
+   </ion-radio-group>
+
+   <!-- refeições -->
+
+   <ion-item>
+    <ion-label>Selecione a sua refeição (o valor será adicionado à diária): </ion-label>
+  </ion-item>
+
+   <ion-radio-group aria-required="true" value="sem"[(ngModel)]="ref">
+    <ion-item>
+    <ion-label>Sem Refeição: R$ 0,00</ion-label>
+    <ion-radio value="sem" slot="start"></ion-radio>
+    </ion-item>
+   
+    <ion-item>
+    <ion-label>Café da Manhã: R$ 30,00</ion-label>
+    <ion-radio value="cafe" slot="start"></ion-radio>
+    </ion-item>
+   
+    <ion-item>
+    <ion-label>Meia Pensão (Café e Jantar): R$ 70,00</ion-label>
+    <ion-radio value="mp" slot="start"></ion-radio>
+    </ion-item>
+
+    <ion-item>
+    <ion-label>Pensão Completa (Café, Almoço e Jantar): R$ 120,00 </ion-label>
+    <ion-radio value="pc" slot="start"></ion-radio>
+    </ion-item>
+   </ion-radio-group>
+
+   <ion-item>
+    <ion-button 
+    id="Ex3"
+    (click)="calcularEx3()">
+      Calcular
+    </ion-button>
+  </ion-item>
+
+  
+
+   <ion-alert
+  trigger="Ex3"
+  header="Confirmar preço:"
+  message={{mensagemDiaria}}
+  [buttons]="alertButtons"
+  class="custom-alert-message">
+</ion-alert>
 </ion-content>

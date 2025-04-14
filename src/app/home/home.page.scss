@@ -25,3 +25,8 @@
 #container a {
   text-decoration: none;
 }
+
+.custom-alert-message {
+  white-space: pre-line; /* Isso vai permitir quebras de linha e espaços em branco */
+  word-wrap: break-word;  /* Quebra palavras grandes, se necessário */
+}
